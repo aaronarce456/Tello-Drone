@@ -4,6 +4,8 @@
 
 import threading, socket, sys, time, subprocess
 
+#Drone: A81
+
 
 # GLOBAL VARIABLES DECLARED HERE....
 host = ''
@@ -44,9 +46,9 @@ recvThread.start()
 # CREATE FUNCTIONS HERE....
 
 
-print("\nFirst & Last Names")
-print("Program Name: ")
-print("Date: ")
+print("\nAaron Arce")
+print("Program Name: Square")
+print("Date: 4.18.2023")
 print("\n****CHECK YOUR TELLO WIFI ADDRESS****")
 print("\n****CHECK SURROUNDING AREA BEFORE FLIGHT****")
 ready = input('\nAre you ready to take flight: ')
@@ -57,10 +59,11 @@ try:
         print("\nStarting Drone!\n")
 
         sendmsg('command', 0)
-        sendmsg('takeoff')
+        sendmsg('takeoff', 8)
 
-        # Review the (SDK) Software Development Kit resource for Drone Commands
-        # Delete these comments before writing your program
+        for i in range(4):
+            sendmsg('forward 100')
+            sendmsg('cw 90')
 
         sendmsg('land')
 
@@ -73,3 +76,4 @@ except KeyboardInterrupt:
 
 breakr = True
 sock.close()
+
