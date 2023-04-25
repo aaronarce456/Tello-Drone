@@ -62,6 +62,7 @@ try:
         sendmsg('up 50')
         sendmsg('forward 250')
 
+        sendmsg('go 200 0 80 60')
         sendmsg('land')
 
         print('\nGreat Flight!!!')
