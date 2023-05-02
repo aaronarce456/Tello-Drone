@@ -59,9 +59,10 @@ try:
 
         sendmsg('command', 0)
         sendmsg('takeoff')
-        sendmsg('up 30 ')
+        sendmsg('up 100 ', 12)
         sendmsg('forward 210', 8)
-        sendmsg('go 180 0 80 20', 8)
+        sendmsg('go 180 0 80 20', 15)
+        sendmsg('curve 75 250 0 -75 -250 0 30', 8)
         sendmsg('land')
         print('\nGreat Flight!!!')
 
@@ -72,3 +73,5 @@ except KeyboardInterrupt:
 
 breakr = True
 sock.close()
+
+
